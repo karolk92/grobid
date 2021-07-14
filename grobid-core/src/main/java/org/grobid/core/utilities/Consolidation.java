@@ -1,9 +1,7 @@
 package org.grobid.core.utilities;
 
-import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.utilities.counters.CntManager;
@@ -13,7 +11,6 @@ import org.grobid.core.utilities.crossref.WorkDeserializer;
 import org.grobid.core.utilities.glutton.GluttonClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import scala.Option;
 
 import java.util.*;
 
@@ -654,10 +651,10 @@ public class Consolidation {
         if (string1.equals(string2))
             similarity = 1.0;
         if ( (string1.length() > 0) && (string2.length() > 0) ) {
-            Option<Object> similarityObject =
-                RatcliffObershelpMetric.compare(string1, string2);
-            if ( (similarityObject != null) && (similarityObject.get() != null) )
-                 similarity = (Double)similarityObject.get();
+//            Option<Object> similarityObject =
+//                RatcliffObershelpMetric.compare(string1, string2);
+//            if ( (similarityObject != null) && (similarityObject.get() != null) )
+//                 similarity = (Double)similarityObject.get();
         }
 
         return similarity.doubleValue();

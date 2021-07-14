@@ -30,12 +30,7 @@ import org.xml.sax.*;
 
 import javax.xml.xpath.XPathConstants;
 
-import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
-import scala.Option;
-
 import me.tongfei.progressbar.*;
-
-//import org.apache.log4j.xml.DOMConfigurator;
 
 /**
  * Evaluation against native XML documents. This is an end-to-end evaluation involving
@@ -1039,10 +1034,10 @@ public class EndToEndEvaluation {
 											similarity = 1.0;
 										if (field.isTextual) {
 											if ( (goldResult.length() > 0) && (grobidResult.length() > 0) ) {
-												Option<Object> similarityObject = 
-													RatcliffObershelpMetric.compare(goldResult, grobidResult);
-												if ( (similarityObject != null) && (similarityObject.get() != null) )
-													 similarity = (Double)similarityObject.get();
+//												Option<Object> similarityObject =
+//													RatcliffObershelpMetric.compare(goldResult, grobidResult);
+//												if ( (similarityObject != null) && (similarityObject.get() != null) )
+//													 similarity = (Double)similarityObject.get();
 											}
 										}
 										if ((goldResultSoft.length() > 0) && 
@@ -1393,10 +1388,10 @@ System.out.println("grobid: " + grobidResult);*/
 									similarity = 1.0;
 								if (field.isTextual) {
 									if ( (goldResult.length() > 0) && (grobidResult.length() > 0) ) {
-										Option<Object> similarityObject = 
-											RatcliffObershelpMetric.compare(goldResult, grobidResult);
-										if ( (similarityObject != null) && (similarityObject.get() != null) )
-											 similarity = (Double)similarityObject.get();
+//										Option<Object> similarityObject =
+//											RatcliffObershelpMetric.compare(goldResult, grobidResult);
+//										if ( (similarityObject != null) && (similarityObject.get() != null) )
+//											 similarity = (Double)similarityObject.get();
 									}
 								}
 								if ((goldResult.length() > 0) && (similarity >= minRatcliffObershelpSimilarity)) {
